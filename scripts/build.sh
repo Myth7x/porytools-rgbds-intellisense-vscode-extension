@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -eu
+
+cd "$(dirname "$0")/.."
+exec npm run build
