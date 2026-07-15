@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-import { BackendStatus } from './backendStatus';
 import { RgbdsLanguageService } from './language';
+import { registerReleaseCheck } from './releaseCheck';
 import { registerUiCommands } from './ui';
 import { WelcomeView } from './welcome';
 
@@ -9,12 +9,11 @@ export function activate(context: vscode.ExtensionContext): void {
   void vscode.workspace.getConfiguration('workbench').update('startupEditor', 'none', vscode.ConfigurationTarget.Global);
 
   const language = new RgbdsLanguageService();
-  const backendStatus = new BackendStatus();
 
   context.subscriptions.push(
     registerUiCommands(context),
     language.register(),
-    backendStatus.register()
+    registerReleaseCheck(context)
   );
 
   context.subscriptions.push(

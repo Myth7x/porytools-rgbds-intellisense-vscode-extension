@@ -78,17 +78,7 @@
         "command": "gbasm.ui.clearStatus",
         "title": "GBASM: Clear Status Item"
       }
-    ],
-    "configuration": {
-      "title": "PoryTools",
-      "properties": {
-        "gbasm.backendPingUrl": {
-          "type": "string",
-          "default": "http://127.0.0.1:8080/",
-          "description": "URL used by the footer backend ping status item."
-        }
-      }
-    }
+    ]
   },
   "scripts": {
     "build": "rm -rf dist && tsc -p .",
