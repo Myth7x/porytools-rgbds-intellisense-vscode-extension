@@ -8,6 +8,10 @@
     "name": "Myth7x",
     "url": "https://github.com/Myth7x"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Myth7x/porytools-rgbds-intellisense-vscode-extension.git"
+  },
   "license": "MIT",
   "icon": "media/logo-big.png",
   "files": [

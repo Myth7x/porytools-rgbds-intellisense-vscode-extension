@@ -38,6 +38,12 @@ npm install
 ./scripts/test.sh
 ```
 
+Build the release VSIX at `../../dist/rgbds-intellisense.vsix`:
+
+```sh
+./scripts/build-release.sh
+```
+
 ## References / Quellen
 
 - [RGBDS documentation](https://rgbds.gbdev.io/docs)
