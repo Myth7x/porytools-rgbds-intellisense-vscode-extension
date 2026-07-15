@@ -1,0 +1,104 @@
+{
+  "name": "rgbds-intellisense",
+  "displayName": "RGBDS IntelliSense",
+  "description": "Standalone Game Boy RGBDS assembly syntax, completion, and symbol navigation.",
+  "version": "0.1.0",
+  "publisher": "team-web-porytools",
+  "author": {
+    "name": "Myth7x",
+    "url": "https://github.com/Myth7x"
+  },
+  "license": "MIT",
+  "icon": "media/logo-big.png",
+  "files": [
+    "dist/*.js",
+    "LICENSE",
+    "language-configuration.json",
+    "media/favicon.png",
+    "media/logo-big.png",
+    "themes/porygon-color-theme.json",
+    "syntaxes/rgbds.tmLanguage.json"
+  ],
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onLanguage:rgbds"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "rgbds",
+        "aliases": [
+          "RGBDS",
+          "Game Boy Assembly"
+        ],
+        "extensions": [
+          ".asm",
+          ".inc",
+          ".s",
+          ".gbasm"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "rgbds",
+        "scopeName": "source.rgbds",
+        "path": "./syntaxes/rgbds.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Porygon",
+        "uiTheme": "vs-dark",
+        "path": "./themes/porygon-color-theme.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "gbasm.ui.notify",
+        "title": "GBASM: Show Notification"
+      },
+      {
+        "command": "gbasm.ui.tab",
+        "title": "GBASM: Open UI Tab"
+      },
+      {
+        "command": "gbasm.ui.status",
+        "title": "GBASM: Set Status Item"
+      },
+      {
+        "command": "gbasm.ui.clearStatus",
+        "title": "GBASM: Clear Status Item"
+      }
+    ],
+    "configuration": {
+      "title": "PoryTools",
+      "properties": {
+        "gbasm.backendPingUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:8080/",
+          "description": "URL used by the footer backend ping status item."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p .",
+    "package": "npm run build && rm -f dist/*.test.js && mkdir -p media ../../dist && cp ../../res/logo-big.png media/logo-big.png && cp ../../res/favicon.png media/favicon.png && vsce package --out ../../dist/rgbds-intellisense.vsix --no-dependencies --allow-missing-repository",
+    "test": "npm run build && node dist/parser.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.1.0",
+    "typescript": "^5.5.0"
+  }
+}

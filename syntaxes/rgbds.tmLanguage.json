@@ -1,0 +1,44 @@
+{
+  "scopeName": "source.rgbds",
+  "patterns": [
+    {
+      "name": "comment.line.semicolon.rgbds",
+      "match": ";.*$"
+    },
+    {
+      "name": "string.quoted.double.rgbds",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.rgbds",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "entity.name.label.rgbds",
+      "match": "^\\s*([A-Za-z_.$@][\\w.$@#]*):"
+    },
+    {
+      "name": "keyword.control.rgbds",
+      "match": "\\b(IF|ELIF|ELSE|ENDC|REPT|ENDR|MACRO|ENDM|PURGE|FOR)\\b"
+    },
+    {
+      "name": "keyword.directive.rgbds",
+      "match": "\\b(SECTION|INCLUDE|INCBIN|CHARMAP|NEWCHARMAP|SETCHARMAP|PUSHC|POPC|RSRESET|RSSET|RB|RW|RL|DS|DB|DW|DL|EXPORT|GLOBAL|IMPORT|DEF|EQU|SET)\\b"
+    },
+    {
+      "name": "keyword.mnemonic.rgbds",
+      "match": "\\b(adc|add|and|bit|call|ccf|cp|cpl|daa|dec|di|ei|halt|inc|jp|jr|ld|ldh|nop|or|pop|push|res|ret|reti|rl|rla|rlc|rlca|rr|rra|rrc|rrca|rst|sbc|scf|set|sla|sra|srl|stop|sub|swap|xor)\\b"
+    },
+    {
+      "name": "constant.language.register.rgbds",
+      "match": "\\b(a|b|c|d|e|h|l|af|bc|de|hl|sp|pc|nz|z|nc)\\b"
+    },
+    {
+      "name": "constant.numeric.rgbds",
+      "match": "(\\$[0-9A-Fa-f]+|%[01]+|&[0-7]+|\\b\\d+\\b)"
+    }
+  ]
+}
