@@ -86,7 +86,7 @@
   },
   "scripts": {
     "build": "rm -rf dist && tsc -p .",
-    "package": "npm run build && rm -f dist/*.test.js && mkdir -p media ../../dist && cp ../../res/logo-big.png media/logo-big.png && cp ../../res/favicon.png media/favicon.png && vsce package --out ../../dist/rgbds-intellisense.vsix --no-dependencies --allow-missing-repository",
+    "package": "npm run build && rm -f dist/*.test.js && vsce package --out dist/rgbds-intellisense.vsix --no-dependencies --allow-missing-repository",
     "test": "npm run build && node dist/parser.test.js"
   },
   "devDependencies": {

@@ -1,5 +1,7 @@
 # PoryTools RGBDS IntelliSense VSCode Extension
 
+[![GitHub release](https://img.shields.io/github/v/release/Myth7x/porytools-rgbds-intellisense-vscode-extension?sort=semver)](https://github.com/Myth7x/porytools-rgbds-intellisense-vscode-extension/releases/latest)
+
 Standalone Visual Studio Code language extension for Game Boy projects using RGBDS. No language server or application backend is required.
 
 ## Features
@@ -38,7 +40,7 @@ npm install
 ./scripts/test.sh
 ```
 
-Build the release VSIX at `../../dist/rgbds-intellisense.vsix`:
+Build the release VSIX at `dist/rgbds-intellisense.vsix`:
 
 ```sh
 ./scripts/build-release.sh

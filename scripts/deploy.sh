@@ -3,4 +3,4 @@ set -eu
 
 cd "$(dirname "$0")/.."
 ./scripts/build-release.sh
-exec npm exec -- vsce publish --packagePath ../../dist/rgbds-intellisense.vsix
+exec npm exec -- vsce publish --packagePath dist/rgbds-intellisense.vsix
